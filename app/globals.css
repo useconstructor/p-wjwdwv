@@ -1,33 +1,27 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-primary: oklch(0.205 0 0);
-  --color-primary-foreground: oklch(0.985 0 0);
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
-  --color-ring: oklch(0.708 0 0);
-  --radius: 0.5rem;
+:root { --paper:#F3F4EF; --ink:#202925; --bottle:#214F43; --signal:#B53C35; --steel:#707B75; --line:#CDD3CC; }
+@theme inline {
+ --font-sans:var(--font-inter); --font-heading:var(--font-barlow); --font-mono:var(--font-plex);
+ --color-background:var(--paper); --color-foreground:var(--ink); --color-primary:var(--bottle); --color-primary-foreground:#fff;
+ --color-secondary:var(--line); --color-muted:var(--line); --color-muted-foreground:#536159; --color-accent:#e3e8df; --color-accent-foreground:var(--ink);
+ --color-destructive:var(--signal); --color-destructive-foreground:#fff; --color-border:var(--line); --color-input:var(--line); --color-ring:var(--bottle);
+ --color-paper:var(--paper); --color-ink:var(--ink); --color-bottle:var(--bottle); --color-signal:var(--signal); --color-steel:var(--steel); --color-line:var(--line); --radius:0.25rem;
 }
-
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+ *{border-color:var(--line)} body{background:var(--paper);color:var(--ink);font-family:var(--font-inter),sans-serif;font-size:16px} h1,h2,h3{font-family:var(--font-barlow),sans-serif;font-weight:600} button,a,input,select,textarea{touch-action:manipulation} button:not(:disabled),select{cursor:pointer} button:disabled{cursor:wait} select:disabled{cursor:not-allowed;color:#536159;background:#e9ece5;opacity:1} input,select,textarea{font-size:16px} input:not([type=checkbox]),select,textarea{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:10px 12px;min-height:44px} textarea{resize:vertical} input[type=checkbox]{width:18px;height:18px;accent-color:var(--bottle)} :focus-visible{outline:2px solid var(--bottle);outline-offset:3px} ::selection{background:var(--line)}
 }
+@layer components {
+ .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-line px-4 py-2 text-sm font-semibold transition-colors hover:bg-line/50 disabled:pointer-events-none disabled:opacity-50; }
+ .btn-primary { @apply border-bottle bg-bottle text-white hover:bg-bottle/90; }
+ .btn-quiet { @apply border-transparent hover:bg-line/40; }
+ .field { @apply flex flex-col gap-2 text-sm font-semibold; }
+ .caption { @apply text-base leading-relaxed text-[#536159]; }
+ .panel { @apply rounded-sm border border-line; }
+ .status { @apply inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 text-xs; }
+ .section-title { @apply text-2xl; }
+}
+@keyframes panel-in{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes panel-out{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(16px)}}
+@keyframes day-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes feedback-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,71 @@
+{
+  "verified": true,
+  "checks": [
+    {
+      "name": "mobile: responsive agenda and configuration state",
+      "passed": true
+    },
+    {
+      "name": "tablet: responsive agenda and configuration state",
+      "passed": true
+    },
+    {
+      "name": "desktop: responsive agenda and configuration state",
+      "passed": true
+    },
+    {
+      "name": "Real configuration forms persist named QA barber and service; all seven weekdays configured",
+      "passed": true
+    },
+    {
+      "name": "Booking form rejects blank client with focus feedback, then saves exact UTC interval and fields",
+      "passed": true
+    },
+    {
+      "name": "mobile: reload retains client, service, both times and textual status; first mobile row visible",
+      "passed": true
+    },
+    {
+      "name": "tablet: reload retains client, service, both times and textual status; first mobile row visible",
+      "passed": true
+    },
+    {
+      "name": "desktop: reload retains client, service, both times and textual status; first mobile row visible",
+      "passed": true
+    },
+    {
+      "name": "Same-start, staggered and enclosing overlaps and invalid inputs rejected without changing saved records",
+      "passed": true
+    },
+    {
+      "name": "Adjacent appointments and another barber accepted; overlapping edit unchanged; different-start concurrency has one winner",
+      "passed": true
+    },
+    {
+      "name": "Configured hours and absences enforced; rejected configuration is atomic; availability excludes whole blocked intervals",
+      "passed": true
+    },
+    {
+      "name": "Stale booking displays real conflict, preserves records and restores focus; reduced-motion dialog disables animation",
+      "passed": true
+    },
+    {
+      "name": "Different-origin HTTP iframe submits real booking; frame reload retains exact client, phone, notes, service, barber, UTC instants, duration and status",
+      "passed": true
+    },
+    {
+      "name": "Confirmed timezone change preserves UTC instants and shifts UI time; nonexistent and ambiguous DST hours rejected and not offered",
+      "passed": true
+    },
+    {
+      "name": "Completion and confirmed cancellation persist; dismissed cancellation preserves booking; freed interval offered again; no browser runtime errors",
+      "passed": true
+    },
+    {
+      "name": "Original configuration and agenda records unchanged; only this run’s labelled QA records cancelled/deactivated",
+      "passed": true
+    }
+  ],
+  "evidenceBoundary": "Earlier executed source and captures were not present in the preserved workspace. This complete source and all attached captures are from this executed run. HTTPS-only deployment cookie checks are deferred; different-origin HTTP iframe booking and frame reload were actually executed.",
+  "qaTag": "Prueba ficticia QA 1791738038490 r2hqv"
+}
